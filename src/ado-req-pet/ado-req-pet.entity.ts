@@ -1,19 +1,22 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class User {
+export class AdoptionRequest {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   name: string;
 
-  @Column({ unique: true })
+  @Column()
   email: string;
 
   @Column()
-  password: string;
+  phone: string;
 
   @Column()
-  role: string;
+  date: Date;
+
+  @Column({ nullable: true })
+  description: string;
 }
